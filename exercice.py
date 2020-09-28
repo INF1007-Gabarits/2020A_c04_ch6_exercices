@@ -2,17 +2,17 @@
 # -*- coding: utf-8 -*-
 
 
-def order(values: list = None) -> bool:
+def order(values: list = None) -> list:
     if values is None:
-        # TODO: Demander les valeurs ici
+        # TODO: demander les valeurs ici
         pass
 
-    return False
+    return []
 
 
 def anagrams(words: list = None) -> bool:
     if words is None:
-        # TODO: Demander les mots ici
+        # TODO: demander les mots ici
         pass
 
     return False
@@ -27,16 +27,15 @@ def best_grades(student_grades: dict) -> dict:
     return {}
 
 
-def histogram(sentence: str) -> tuple:
-    # TODO: Créer l'histogramme a l'aide d'un dictionnaire
-    #       Afficher l'histogramme et les lettres les plus fréquentes
-    #       Retourner l'histogramme et le tableau de lettres
+def frequence(sentence: str) -> dict:
+    # TODO: Afficher les lettres les plus fréquentes
+    #       Retourner le tableau de lettres
 
-    return {}, []
+    return {}
 
 
 def get_recipes():
-    # TODO: Demander le nom d'une recette, puis ses ingrédients et enregistrer dans une structure de données 
+    # TODO: Demander le nom d'une recette, puis ses ingredients et enregistrer dans une structure de données
     pass
 
 
@@ -56,9 +55,12 @@ def main() -> None:
     print(f"Ma liste contient-elle des doublons? {contains_doubles(my_list)}")
 
     grades = {"Bob": [90, 65, 20], "Alice": [85, 75, 83]}
-    name, result = best_grades(grades)
-    print(f"{name} a la meilleure moyenne: {result}")
-    
+    best_student = best_grades(grades)
+    print(f"{list(best_student.keys())[0]} a la meilleure moyenne: {list(best_student.values())[0]}")
+
+    sentence = "bonjour, je suis une phrase. je suis compose de beaucoup de lettre. oui oui"
+    frequence(sentence)
+
     print("On enregistre les recettes...")
     recipes = get_recipes()
 

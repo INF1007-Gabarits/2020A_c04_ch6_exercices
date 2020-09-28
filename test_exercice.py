@@ -56,12 +56,11 @@ class TestExercice(unittest.TestCase):
         )
 
     def test_grades(self):
-        values = [
-            {"Sam": [100, 100, 100], "Sei": [0, 0, 0]}
-        ]
+        value = {"Sam": [80, 90, 85], "Sei": [100, 50, 50]}
 
-        output = [exercice.best_grades(v) for v in values]
-        answer = [{"Sam": 100}]
+
+        output = exercice.best_grades(value)
+        answer = {"Sam": 85}
 
         self.assertDictEqual(
             output,
@@ -69,16 +68,16 @@ class TestExercice(unittest.TestCase):
             'Erreur dans les notes'
         )
 
-    def test_histogram(self):
+    def test_frequence(self):
         sentences = [
             "Bonjour, bonjour",
             "J'adore mon baccalaureat en genie informatique/logiciel"
         ]
 
-        output = [exercice.histogram(s) for s in sentences]
+        output = [exercice.frequence(s) for s in sentences]
         answer = [dict(Counter(s)) for s in sentences]
 
-        self.assertDictEqual(
+        self.assertListEqual(
             output,
             answer,
             'Erreur dans les histogrammes'
